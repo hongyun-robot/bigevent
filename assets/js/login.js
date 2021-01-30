@@ -1,4 +1,5 @@
 $(function () {
+  $('[name=username]').blur();
   // 点击切换登录注册模块
   $('#link_reg').on('click', function () {
     $('.login-box').hide();
