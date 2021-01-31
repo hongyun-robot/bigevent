@@ -16,17 +16,6 @@ $(function () {
   // 弹出层
   let layer = layui.layer;
   // 定义校验规则
-  form.verify({
-    pwd: [/^[\S]{6,12}$/, '密码不能包含空格'],
-    // 定义确认密码校验规则
-    repwd(value) {
-      if (value !== $('.reg-box [name=password]').val()) {
-        $('.reg-box [name=password]').val('');
-        $('.reg-box [name=repassword]').val('');
-        return '两次密码不一致';
-      }
-    },
-  });
 
   // 提交注册信息
   $('#form-reg').on('submit', function (e) {
@@ -49,7 +38,7 @@ $(function () {
   $('#form-login').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
-      type: 'post',
+      method: 'post',
       url: '/api/login',
       data: $(this).serialize(),
       success(res) {

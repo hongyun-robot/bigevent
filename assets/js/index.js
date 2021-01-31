@@ -18,7 +18,7 @@ $(function () {
 
 function getUserInfo() {
   $.ajax({
-    type: 'get',
+    method: 'get',
     url: '/my/userinfo',
     success(res) {
       if (res.status !== 0) {
