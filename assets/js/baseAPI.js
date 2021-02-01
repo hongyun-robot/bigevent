@@ -10,7 +10,8 @@ $.ajaxPrefilter(function (option) {
     };
     // 判断用户有没有登录
     option.complete = function (res) {
-      if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+      console.log(res);
+      if (res.responseJSON && res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
         localStorage.removeItem('token');
         layui.layer.msg(res.responseJSON.message + '请重新登录,正在跳转至登录界面');
         setTimeout(() => {

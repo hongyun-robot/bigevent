@@ -45,7 +45,7 @@ $(function () {
         if (res.status !== 0) return layer.msg(res.message);
         layer.msg(res.message + '正在跳转后台页面');
         localStorage.setItem('token', res.token);
-        setTimeout(() => (location.href = '../../index.html'), 1000);
+        setTimeout(() => (location.href = '/index.html'), 1000);
       },
     });
   });
